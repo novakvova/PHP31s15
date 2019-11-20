@@ -20,18 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <?php include "_header.php"; ?>
+<?php include "input-helper.php"; ?>
+
     <div class="row mt-5">
         <form method="post">
             <h1>Реєстрація</h1>
+
+            <?php craate_form_group('email', 'Електронна пошта', $errors, 'email'); ?>
+
+            <!--
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email"
-                       class="form-control
-                       <?php
-if (isset($errors["email"]) && !empty($errors["email"])) {
-    echo "is-invalid";
-}
-                       ?>"
+                       class="form-control"
                        id="email"
                        name="email"
                        placeholder="Enter email" />
@@ -45,7 +46,7 @@ if (isset($errors["email"]) && !empty($errors["email"])) {
                 }
                 ?>
 
-            </div>
+            </div> -->
 
             <div class="form-group">
                 <label for="password">Password</label>
