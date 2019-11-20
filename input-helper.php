@@ -10,7 +10,7 @@ function craate_form_group($name, $label, $errors, $type)
     }
     echo '" id="'.$name.'" name="'.$name.'" />';
 
-    if (isset($errors["email"]) && !empty($errors["email"])) {
+    if (isset($errors[$name]) && !empty($errors[$name])) {
         echo '<div class="invalid-feedback d-block">' . $errors[$name] . '</div>';
     }
     echo '</div>';
