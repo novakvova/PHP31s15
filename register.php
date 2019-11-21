@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="row mt-5">
         <div class="offset-3 col-md-6">
-            <form method="post">
+            <form method="post" id="form_register">
                 <h1>Реєстрація</h1>
                 <?php craate_form_group('email',
                     'Електронна пошта',
@@ -49,17 +49,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'Пароль',
                     $errors,
                     'password'); ?>
+                <div id="invalid-pass" class="d-none invalid-feedback alert alert-danger">
+                    Пароль повинен мати мінімум 6 символів на латиниці, нижній і верхній регістр, та цифри!
+                </div>
                 <?php craate_form_group('confirm_password',
                     'Повтор пароль',
                     $errors,
                     'password'); ?>
+
                 <?php craate_form_group('image',
                     'Оберіть файл',
                     $errors,
                     'file'); ?>
+
+                <img id="prev"/>
                 <input type="submit" class="btn btn-success" value="Реєстрація"/>
             </form>
         </div>
     </div>
+<?php include "_scripts.php"; ?>
+
+<script src="js/register/register.js"></script>
 
 <?php include "_footer.php";
